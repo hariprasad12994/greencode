@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
-#include "runtime.hpp"
+#include "../lib/runtime.hpp"
 
 
 int count_step_climb_paths_tabulation(int n, std::vector<int>& table, const std::vector<int>& steps) {

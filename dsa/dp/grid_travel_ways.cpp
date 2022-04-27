@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../runtime.hpp"
+#include "../lib/runtime.hpp"
 #include <map>
 #include <vector>
 
@@ -22,7 +22,7 @@ unsigned int grid_travel_memo(int src_x, int src_y, int dest_x, int dest_y, std:
   if(dest_x == 0 || dest_y == 0) return 0;
 
   memo[pt] = grid_travel_memo(src_x, src_y, dest_x - 1, dest_y, memo) +
-                                grid_travel_memo(src_x, src_y, dest_x, dest_y - 1, memo);
+             grid_travel_memo(src_x, src_y, dest_x, dest_y - 1, memo);
   return memo[pt];
 }
 
