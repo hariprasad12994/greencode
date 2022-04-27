@@ -18,7 +18,7 @@ public:
 bool grid_travel_memo(int src_x, int src_y, int dest_x, int dest_y, std::set<Point>& memo) {
   if(memo.find(Point(dest_x, dest_y)) != memo.end()) return true;
   if(dest_x == src_x && dest_y == src_y) return true;
-  if(dest_x < 1 || dest_y < 1) return false;
+  if(dest_x == 0 || dest_y == 0) return false;
 
   memo.insert(Point(dest_x, dest_y));
 
@@ -33,7 +33,7 @@ bool grid_travel_memo(int src_x, int src_y, int dest_x, int dest_y) {
 
 bool grid_travel(int src_x, int src_y, int dest_x, int dest_y) {
   if(dest_x == src_x && dest_y == src_y) return true;
-  if(dest_x < 1 || dest_y < 1) return false;
+  if(dest_x == 0 || dest_y == 0) return false;
 
   return grid_travel(src_x, src_y, dest_x - 1, dest_y) || 
          grid_travel(src_x, src_y, dest_x, dest_y - 1);
