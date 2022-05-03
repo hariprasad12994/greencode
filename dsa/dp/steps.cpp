@@ -55,7 +55,7 @@ int count_step_climb_paths(int n) {
 
 
 int main(void) {
-  std::vector<int> inputs{0, 2, 5, 10, 20, 30};
+  std::vector<int> inputs{0, 2, 4, 5, 10, 20, 30};
 
   std::cout << "Brute Force" << '\n';
   for(auto input: inputs) {
