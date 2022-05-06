@@ -25,14 +25,14 @@ int coin_change_tabulation(const std::vector<int>& coins, int value) {
   
   for(std::size_t coin = 0; coin <= coins.size(); coin++) {
     for(std::size_t amount = 0; amount <= value; amount++) {
-      if(coin == 0) table[coin][amount] = 0;
-      else if(amount == 0) table[coin][amount] = 1;
+      if(coin == 0) table[coin][amount] = 1;
+      else if(amount == 0) table[coin][amount] = 0;
       else{
-        if(coins[coin] > amount) {
-          table[coin][amount] = table[coin - 1][amount];
+        if(coins[coin - 1] > amount) {
+          table[coin][amount] = table[coin - 1][amount - 1];
         }
         else {
-          table[coin][amount] = table[coin - 1][amount] + table[coin][amount - coins[coin - 1]];
+          table[coin][amount] = 1 + table[coin - 1][amount - 1];
         }
       }
     }
@@ -52,6 +52,7 @@ int coin_change_tabulation(const std::vector<int>& coins, int value) {
 int main(void) {
   std::cout << coin_change(std::vector<int>{1, 2, 3}, 4) << '\n';
   std::cout << coin_change(std::vector<int>{2, 5, 3, 6}, 10) << '\n';
+  std::cout << coin_change_tabulation(std::vector<int>{1, 2, 3}, 4) << '\n';
   std::cout << coin_change_tabulation(std::vector<int>{2, 5, 3, 6}, 10) << '\n';
   return 0;
 }
