@@ -1,8 +1,5 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include <array>
-#include <cassert>
 
 
 class Trie {
@@ -43,16 +40,3 @@ class Trie {
 };
 
 
-int main(void) {
-  Trie dictionary;
-  std::vector<std::string> word_bank{"master", "hello", "world", "bye", "morning"};
-  for(auto const& word: word_bank) {
-    dictionary.insert(word);
-  }
-
-  std::cout << dictionary.find("hello") << '\n';
-  std::cout << dictionary.find("world") << '\n';
-  std::cout << dictionary.find("king") << '\n';
-
-  return 0;
-}
