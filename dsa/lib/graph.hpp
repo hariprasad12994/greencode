@@ -33,10 +33,16 @@ public:
   }
   
   // todo : handle 1. directed, 2. unweighted graphs
-  void add_edge(GraphNode source, GraphNode dest, Weight weight) {
+  void add_edge(GraphNode source, GraphNode dest, Weight weight=0) {
     add_node(source);
     add_node(dest);
     graph[source].emplace_back(dest, weight);
-    //graph[dest].emplace_back(source, weight);
+  }
+
+  void add_bidirectional_edge(GraphNode source, GraphNode dest, Weight weight=0) {
+    add_node(source);
+    add_node(dest);
+    graph[source].emplace_back(dest, weight);
+    graph[dest].emplace_back(source, weight);
   }
 };
