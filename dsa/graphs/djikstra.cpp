@@ -3,7 +3,7 @@
 #include <map>
 #include <unordered_set>
 #include <limits>
-#include "../lib/graph.hpp"
+#include "../../adt/graph.hpp"
 
 
 void djikstras(Graph<int>& graph, int start_node) {
