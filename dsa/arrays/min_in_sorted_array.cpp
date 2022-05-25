@@ -23,9 +23,9 @@ int min_element_in_sorted_rotated_array(const std::vector<int>& nums) {
 
 int main(void) {
   std::cout << min_element_in_sorted_rotated_array(std::vector<int>{9}) << '\n';
-  std::cout << min_element_in_sorted_rotated_array(std::vector<int>{7, 5, 4, 1, 2}) << '\n';
+  std::cout << min_element_in_sorted_rotated_array(std::vector<int>{4, 5, 7, 1, 2}) << '\n';
   std::cout << min_element_in_sorted_rotated_array(std::vector<int>{1, 2, 3, 4, 5}) << '\n';
-  std::cout << min_element_in_sorted_rotated_array(std::vector<int>{5, 4, 3, 1}) << '\n';
+  std::cout << min_element_in_sorted_rotated_array(std::vector<int>{3, 4, 5, 1}) << '\n';
   std::cout << min_element_in_sorted_rotated_array(std::vector<int>{13, 22, 46, 107, 112, 3, 7}) << '\n';
   std::cout << min_element_in_sorted_rotated_array(std::vector<int>{53, 134, 181, 343, 540, 604, 777, 781, 3, 7, 13, 17, 19}) << '\n';
   std::cout << min_element_in_sorted_rotated_array(std::vector<int>{1, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 10, 10, 11}) << '\n';
