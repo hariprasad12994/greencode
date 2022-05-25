@@ -9,13 +9,9 @@ int min_element_by_bsearch(const std::vector<int>& nums, std::size_t left_idx, s
     return nums[mid_idx];
   if(nums[mid_idx] < nums[mid_idx - 1] && nums[mid_idx + 1] > nums[mid_idx])
     return nums[mid_idx];
-  if(nums[left_idx] > nums[right_idx]) {
-    if(nums[mid_idx] > nums[right_idx])
-      return min_element_by_bsearch(nums, mid_idx + 1, right_idx);
-    if(nums[mid_idx] < nums[left_idx])
-      return min_element_by_bsearch(nums, left_idx, mid_idx - 1);
-  }
-  return min_element_by_bsearch(nums, left_idx, mid_idx - 1);
+  if(nums[right_idx] > nums[mid_idx])
+    return min_element_by_bsearch(nums, left_idx, mid_idx - 1);
+   return min_element_by_bsearch(nums, mid_idx + 1, right_idx);
 }
 
 
