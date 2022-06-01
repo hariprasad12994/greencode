@@ -4,4 +4,5 @@ add_subdirectory(graphs)
 add_subdirectory(sliding_window)
 add_subdirectory(trees)
 add_subdirectory(arrays)
+add_subdirectory(hashtables)
 
