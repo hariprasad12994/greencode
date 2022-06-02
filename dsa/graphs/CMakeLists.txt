@@ -5,3 +5,6 @@ add_executable(mst mst.cpp)
 add_executable(network_delay network_delay.cpp)
 
 add_executable(top_sort top_sort.cpp)
+
+add_executable(count_islands count_islands.cpp)
+
