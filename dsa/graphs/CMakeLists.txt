@@ -8,3 +8,5 @@ add_executable(top_sort top_sort.cpp)
 
 add_executable(count_islands count_islands.cpp)
 
+add_executable(open_the_lock open_the_lock.cpp)
+
