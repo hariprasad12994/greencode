@@ -10,3 +10,7 @@ add_executable(count_islands count_islands.cpp)
 
 add_executable(open_the_lock open_the_lock.cpp)
 
+add_executable(test_graph test_graph.cpp)
+
+add_executable(dfs dfs.cpp)
+add_executable(bfs bfs.cpp)
