@@ -1,0 +1,1 @@
+add_executable(longest_ss_repeating_char longest_ss_repeating_char.cpp)
