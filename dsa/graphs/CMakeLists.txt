@@ -14,3 +14,4 @@ add_executable(test_graph test_graph.cpp)
 
 add_executable(dfs dfs.cpp)
 add_executable(bfs bfs.cpp)
+add_executable(prim prim.cpp)
