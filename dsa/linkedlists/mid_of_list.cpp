@@ -1,23 +1,20 @@
-#include "ll.hpp"
 #include <iostream>
+
+#include "ll.hpp"
 
 
 template <typename T>
-LinkedListNode<T>* reverse(LinkedListNode<T>* head) {
-  LinkedListNode<T>* new_head = nullptr, *temp = nullptr;
-  LinkedListNode<T>* walker = head;
+T mid_of_list(LinkedListNode<T>* head) {
+  LinkedListNode<T>* fast = head;
+  LinkedListNode<T>* slow = head;
 
-  while(walker != nullptr) {
-    temp = walker->next;
-    walker->next = new_head;
-    new_head = walker;
-    walker = temp;
+  while(slow != nullptr && fast != nullptr && fast->next != nullptr) {
+    slow = slow->next;
+    fast = fast->next->next;
   }
 
-  return new_head;
+  return slow->payload;
 }
-
-
 
 int main(void) {
   LinkedListNode<int>* head = new_node<int>(0);
@@ -33,8 +30,8 @@ int main(void) {
   _3->next = _4;
   _4->next = _5;
 
-  LinkedListNode<int>* rev_list = reverse(head);
-  print_list<int>(rev_list);
+  int mid_elem = mid_of_list<int>(head);
+  std::cout << mid_elem << '\n';
 
   return 0;
 }
