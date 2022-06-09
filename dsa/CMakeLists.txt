@@ -6,4 +6,5 @@ add_subdirectory(trees)
 add_subdirectory(arrays)
 add_subdirectory(hashtables)
 add_subdirectory(strings)
+add_subdirectory(linkedlists)
 
