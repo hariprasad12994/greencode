@@ -7,6 +7,12 @@ LinkedListNode<T>* merge(LinkedListNode<T>* head_1, LinkedListNode<T>* head_2) {
   if(head_1 == nullptr && head_2 == nullptr)
     return nullptr;
 
+  if(head_1 == nullptr)
+    return head_2;
+
+  if(head_2 == nullptr)
+    return head_1;
+
   LinkedListNode<T>* merged = nullptr;
   if(head_1->payload > head_2->payload) {
     merged = head_1;
@@ -78,6 +84,13 @@ int main(void) {
 
   merged = merge<int>(nullptr, nullptr);
   print_list<int>(merged);
+
+  LinkedListNode<char>* c_head_1 = new_node<char>('s');
+  LinkedListNode<char>* c_merged = merge<char>(c_head_1, nullptr);
+  print_list<char>(c_merged);
+  LinkedListNode<char>* c_head_2 = new_node<char>('f');
+  c_merged = merge<char>(nullptr, c_head_2);
+  print_list<char>(c_merged);
 
   return 0;
 }
