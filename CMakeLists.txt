@@ -5,4 +5,5 @@ add_definitions("-std=c++14")
 
 add_subdirectory(dsa)
 add_subdirectory(threading)
+add_subdirectory(stl)
 
