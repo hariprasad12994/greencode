@@ -28,6 +28,8 @@ int main(void) {
   }
   catch (const std::exception& e) {
     std::cout << e.what() << '\n';
+    // Uncommenting this will automatically cleanup FileHandler file due to
+    // stack unwinding
     throw;
   }
   return 0;
