@@ -39,6 +39,26 @@ class ThirdClass: public FirstClass {
 };
 
 
+class AbstractBaseClass {
+  public:
+    ~AbstractBaseClass() = 0;
+    virtual void method() = 0;
+};
+
+
+class DerivedClass : public AbstractBaseClass {
+  public:
+    DerivedClass(std::string param) {
+      if(param.size() < 5)
+        throw std::invalid_argument("String length not sufficient for DerivedClass object construction");
+      member = param;
+    }
+
+    void method() override {
+      std::cout << "DerivedClass::method()" << '\n';
+    }
+};
+
 int main(void) {
   FirstClass obj_1(std::string("hello"));
   try {
@@ -68,6 +88,14 @@ int main(void) {
     // class FirstClass was constructed succesfully, so the destructor for
     // "Nemesis" will be called while going out of scope
     ThirdClass obj_6(std::string("Nemesis"), std::string("oh"));
+  }
+  catch (const std::exception& e) {
+    std::cout << e.what() << '\n';
+  }
+
+  DerivedClass obj_7("sample");
+  try {
+    DerivedClass obj_8(std::string("abc"));
   }
   catch (const std::exception& e) {
     std::cout << e.what() << '\n';
