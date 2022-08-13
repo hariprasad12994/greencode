@@ -11,7 +11,7 @@ int main() {
     auto iterations = 0;
     for(iterations = 1; iterations <= 100; iterations++)
       {
-        std::unique_lock lock(critical_section);
+        std::unique_lock<std::mutex> lock(critical_section);
         counter++; 
       }
   });
@@ -20,7 +20,7 @@ int main() {
     auto iterations = 0;
     for(iterations = 1; iterations <= 100; iterations++)
       {
-        std::unique_lock lock(critical_section);
+        std::unique_lock<std::mutex> lock(critical_section);
         counter--; 
       }
   });

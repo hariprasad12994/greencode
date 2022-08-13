@@ -28,7 +28,7 @@ int main(void) {
 
   std::thread consumer_thread(
     [&](){
-      std::unique_lock lock(critical_section);
+      std::unique_lock<std::mutex> lock(critical_section);
       packet_dispatch_barrier.wait(lock, [&](){ return packet_dispatched; });
       std::transform(data_packet.begin(), data_packet.end(), data_packet.begin(), [](auto elem) { return elem * 2; });
       std::for_each(data_packet.begin(), data_packet.end(), [](auto elem) { std::cout << elem << " "; });
