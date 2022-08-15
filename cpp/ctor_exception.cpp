@@ -41,7 +41,9 @@ class ThirdClass: public FirstClass {
 
 class AbstractBaseClass {
   public:
-    ~AbstractBaseClass() = 0;
+    ~AbstractBaseClass() {
+      std::cout << "~AbstractBaseClass()" << '\n';
+    }
     virtual void method() = 0;
 };
 
@@ -57,6 +59,9 @@ class DerivedClass : public AbstractBaseClass {
     void method() override {
       std::cout << "DerivedClass::method()" << '\n';
     }
+
+  private:
+    std::string member;
 };
 
 int main(void) {
